@@ -1,10 +1,13 @@
 import React from "react";
+import Search from "./pages/Search";
+import Nav from "./components/Navbar";
 
 function App() {
   return (
-    <h1>
-      Testing
-    </h1>
+    <>
+    <Nav />    
+    <Search />
+    </>
   );
 }
 
