@@ -3,3 +3,18 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+form {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+#formContainer {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+#resultsContainer {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
