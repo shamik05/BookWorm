@@ -12,6 +12,9 @@ export default {
   searchBooks: function(search) {
     return axios.get(BASEURL+search+APIKEY+maxResults);
   }
+
+  
 }
+
 
 // GET https://books.googleapis.com/books/v1/volumes?key=[YOUR_API_KEY] HTTP/1.1

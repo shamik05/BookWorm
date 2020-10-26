@@ -7,7 +7,10 @@ function Nav() {
         Google Books      
       </a>
       <a className="navbar-brand" href="/">
-        Search
+                              
+                              
+                              
+                              Search
       </a>
       <a className="navbar-brand" href="/">
         Saved

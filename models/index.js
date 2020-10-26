@@ -1,3 +1,4 @@
 module.exports = {
-  Book: require("./book")
-}
+  // eslint-disable-next-line global-require
+  Book: require("./book"),
+};

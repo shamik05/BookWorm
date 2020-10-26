@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+
+const { Schema } = mongoose;
 
 // Define book details
 const bookSchema = new Schema(
@@ -8,46 +9,36 @@ const bookSchema = new Schema(
       type: String,
       trim: true,
       required: true,
-      require: "Enter book's title"
+      require: "Enter book's title",
     },
     authors: {
       type: [String],
       trim: true,
       required: true,
-      require: "Enter book's author(s)"
+      require: "Enter book's author(s)",
     },
     description: {
       type: String,
       trim: true,
       required: true,
-      require: "Enter a book description"
+      require: "Enter a book description",
     },
     image: {
       type: String,
       trim: true,
       required: true,
-      require: "Enter the book's thumbnail url"
+      require: "Enter the book's thumbnail url",
     },
     link: {
       type: String,
       trim: true,
       required: true,
-      require: "Enter the book's url"
-    }
-  }
-)
+      require: "Enter the book's url",
+    },
+  },
+);
 
 // Export model
 const Book = mongoose.model("Book", bookSchema);
 
 module.exports = Book;
-
-
-
-
-
-
-
-
-
-

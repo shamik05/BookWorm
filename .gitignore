@@ -24,5 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 instructions.md
-.instructions.md
 .env
