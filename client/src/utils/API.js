@@ -28,6 +28,17 @@ export default {
       return false;
     }
   },
+  async saveBook(id) {
+    console.log(id);
+    try {
+      const response = await axios.post("/api/save", (id));
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
 };
 
 // GET https://books.googleapis.com/books/v1/volumes?key=[YOUR_API_KEY] HTTP/1.1
