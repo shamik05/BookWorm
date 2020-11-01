@@ -8,7 +8,5 @@ router.get("/api/books", (req, res) => {
     .then(res.json(true));
 });
 
-
-
 // Export router functions
 module.exports = router;

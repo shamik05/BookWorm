@@ -4,12 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-form {
-  /* display: flex;
-  flex-direction: column; */
-}
-
-#formContainer {
+/* #formContainer {
   margin-left: 5rem;
   margin-right: 5rem;
 }
@@ -17,4 +12,4 @@ form {
 #resultsContainer {
   margin-left: 5rem;
   margin-right: 5rem;
-}
+} */

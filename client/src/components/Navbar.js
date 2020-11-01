@@ -4,16 +4,13 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <a className="navbar-brand" href="/">
-        Google Books      
+        Google Books
       </a>
       <a className="navbar-brand" href="/">
-                              
-                              
-                              
-                              Search
+        <small>Search</small>
       </a>
       <a className="navbar-brand" href="/">
-        Saved
+        <small>Saved</small>
       </a>
     </nav>
   );

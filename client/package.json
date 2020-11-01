@@ -1,11 +1,11 @@
 {
-  "name": "BookWork",
+  "name": "BookWorm",
   "version": "0.1.0",
   "description": "browsing books using google books api",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",

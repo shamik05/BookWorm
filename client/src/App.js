@@ -5,8 +5,8 @@ import Nav from "./components/Navbar";
 function App() {
   return (
     <>
-    <Nav />    
-    <Search />
+      <Nav />
+      <Search />
     </>
   );
 }
