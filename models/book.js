@@ -11,7 +11,13 @@ const bookSchema = new Schema(
       required: true,
       require: "Enter book's title",
     },
-    authors: {
+    subtitle: {
+      type: String,
+      trim: true,
+      required: false,
+      default: null,
+    },
+    author: {
       type: [String],
       trim: true,
       required: true,
@@ -23,7 +29,7 @@ const bookSchema = new Schema(
       required: true,
       require: "Enter a book description",
     },
-    image: {
+    thumbnail: {
       type: String,
       trim: true,
       required: true,

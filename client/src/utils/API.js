@@ -15,7 +15,7 @@ export default {
     try {
       const response = await axios.get(BASEURL + search + "&key=" + APIKEY + maxResults);
       const books = response.data.items.map((element) => ({
-        id: element.id,
+        link: element.id,
         title: element.volumeInfo.title,
         subtitle: element.volumeInfo.subtitle,
         author: element.volumeInfo.authors,
@@ -28,10 +28,11 @@ export default {
       return false;
     }
   },
-  async saveBook(id) {
-    console.log(id);
+  async saveBook(book) {
+    event.preventDefault();
+    console.log(book);
     try {
-      const response = await axios.post("/api/save", (id));
+      const response = await axios.post("/api/books", (book));
       console.log(response);
       return response;
     } catch (error) {

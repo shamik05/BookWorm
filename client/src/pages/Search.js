@@ -36,9 +36,9 @@ function Search() {
       </form>
 
       <h3>Results</h3>
-      {books ? (books.map((element) => <Result key={element.id} {...element} />)
+      {books ? (books.map((element) => <Result key={element.link} {...element} />)
       ) : (
-        <h4>No results found</h4>
+        <h4>No results to display</h4>
       )}
     </>
   );
