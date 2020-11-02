@@ -17,7 +17,10 @@ function Saved() {
 
   return (
     <>
-      <h3>Saved Books</h3>
+      <h3>
+        <i className="fas fa-download" />
+        Saved Books
+      </h3>
       {books.length ? (books.map((element) => (
         <Result
           key={element.link}

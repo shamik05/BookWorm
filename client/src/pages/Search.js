@@ -26,10 +26,10 @@ function Search() {
 
   function checkBooks() {
     if (books === undefined) {
-      return <h4>Search For A Book To Begin!</h4>;
+      return <h4 className="searchBegin">Search For A Book To Begin!</h4>;
     }
     if (books === false) {
-      return <h4>No Results Found</h4>;
+      return <h4 className="searchBegin">No Results Found</h4>;
     }
     return books.map((element) => (
       <Result key={element.link} book={element} buttonClick={handleSave} type="SAVE" />
@@ -38,9 +38,13 @@ function Search() {
 
   return (
     <>
-      <form>
-        <input placeholder="Type book details..." onChange={handleInputChange} />
-        <button type="submit" onClick={handleSubmit}>Search</button>
+      <form className="form-group">
+        <h2>
+          <i className="fas fa-book" />
+          Book Search
+        </h2>
+        <input className="form-control" placeholder="Type book details..." onChange={handleInputChange} />
+        <button className="btn btn-success" type="submit" onClick={handleSubmit}>Search</button>
       </form>
 
       <h3>Results</h3>

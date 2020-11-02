@@ -4,12 +4,46 @@ body {
   font-family: sans-serif;
 }
 
-/* #formContainer {
+form, #results {
   margin-left: 5rem;
   margin-right: 5rem;
 }
 
-#resultsContainer {
-  margin-left: 5rem;
-  margin-right: 5rem;
-} */
+form button, form input {
+  margin-top: 20px;
+}
+
+.form-control {
+  font-size: 3rem;
+}
+
+h3 {
+  margin: 2rem 5rem;
+}
+
+.searchBegin {
+  display: flex;
+  justify-content: center;
+}
+
+#results {
+  padding: 20px;
+  margin-bottom: 3rem;
+}
+
+.btn-primary, .btn-info {
+  margin: 3px;
+}
+
+.resultsBlock {
+  display: inline-flex;
+  padding-right: 30%;
+}
+
+.resultsDesc {
+  margin-left: 20px;
+}
+
+.fas {
+  padding-right: 10px;
+}
