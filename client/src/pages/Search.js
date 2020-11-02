@@ -1,9 +1,7 @@
-// /* eslint-disable */
+/* eslint-disable */
 import React, { useState } from "react";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import Result from "../components/Result";
-// import { Input, FormBtn } from "../components/Form";
 
 function Search() {
   const [books, setBooks] = useState();
@@ -25,20 +23,15 @@ function Search() {
 
   return (
     <>
-      <Jumbotron>
-        <h1>Google Books Search</h1>
-        <h3>Search for and Save Books of Interest</h3>
-      </Jumbotron>
-
       <form>
-        <input placeholder="Harry Potter" onChange={handleInputChange} />
+        <input placeholder="Type book details..." onChange={handleInputChange} />
         <button type="submit" onClick={handleSubmit}>Search</button>
       </form>
 
       <h3>Results</h3>
       {books ? (books.map((element) => <Result key={element.link} {...element} />)
       ) : (
-        <h4>No results to display</h4>
+        <h4>No Results to Display</h4>
       )}
     </>
   );

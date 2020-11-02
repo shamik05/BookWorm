@@ -8,8 +8,14 @@ const maxResults = "&maxResults=10";
 
 export default {
   // Get all books
-  getBooks() {
-
+  async getBooks() {
+    try {
+      const response = await axios.get("/api/books");
+      return response;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   },
   async searchBooks(search) {
     try {
