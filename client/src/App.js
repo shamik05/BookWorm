@@ -21,6 +21,9 @@ function App() {
         <Route exact path="/saved">
           <Saved />
         </Route>
+        <Route path="/api/books/:id">
+          <Saved />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

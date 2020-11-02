@@ -7,7 +7,6 @@ function Saved() {
 
   async function loadBooks() {
     setBooks(await API.getBooks());
-    console.log(books);
   }
 
   useEffect(() => {

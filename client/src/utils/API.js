@@ -10,7 +10,6 @@ export default {
   async getBooks() {
     try {
       const response = await axios.get("/api/books");
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error);
@@ -43,6 +42,15 @@ export default {
     try {
       const response = await axios.post("/api/books", (book));
       console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
+  async deleteBook(id) {
+    try {
+      const response = await axios.delete(`/api/books/${id}`);
       return response;
     } catch (error) {
       console.log(error);
