@@ -30,7 +30,9 @@ function Result({ book, buttonClick, type }) {
 
       {/* Display book image and description */}
       <div className="resultsBlock">
-        <img className="resultsImg" src={thumbnail} alt="book cover" />
+        <div className="resultsImgBlock">
+          <img className="resultsImg" src={thumbnail} alt="book cover" />
+        </div>
         <h5 className="card-text resultsDesc">{description}</h5>
       </div>
     </div>

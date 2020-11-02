@@ -4,7 +4,13 @@ body {
   font-family: sans-serif;
 }
 
-form, #results {
+/* Alert component */
+.alert {
+  text-align: center;
+}
+
+/* Search Form from Search page */
+form, #results, .alert {
   margin-left: 5rem;
   margin-right: 5rem;
 }
@@ -21,29 +27,34 @@ h3 {
   margin: 2rem 5rem;
 }
 
+/* Results component default message on page load */
 .searchBegin {
   display: flex;
   justify-content: center;
 }
 
+/* Results component */
 #results {
   padding: 20px;
   margin-bottom: 3rem;
 }
 
+/* Results component's view, save and delete buttons */
 .btn-primary, .btn-info {
   margin: 3px;
 }
 
+/* Result component's card displaying a book */
 .resultsBlock {
   display: inline-flex;
   padding-right: 30%;
 }
 
-.resultsDesc {
-  margin-left: 20px;
+.resultsImg {
+  padding-right: 30px;
 }
 
+/* Font awesome icon */
 .fas {
   padding-right: 10px;
 }

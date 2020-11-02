@@ -34,7 +34,7 @@ function Saved() {
         />
       ))
       ) : (
-        <h4>No Saved Books</h4>
+        <h4 className="searchBegin">No Saved Books</h4>
       )}
     </>
   );

@@ -1,20 +1,29 @@
 /* eslint-disable no-alert */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import io from "socket.io-client";
 import Search from "./pages/Search";
 import Nav from "./components/Navbar";
 import Saved from "./pages/Saved";
 import Jumbotron from "./components/Jumbotron";
+import Alert from "./components/Alert";
 
 const socket = io();
 
 function App() {
+  // Track any alerts emitted by socketio
+  const [alert, setAlert] = useState();
+
   // Handle an emitted message called saved and emit book details
   useEffect(() => {
     socket.on("saved", (data) => {
-      alert(`${data} has been saved!`);
+      setAlert(data);
     });
+
+    // Set alert to null to dismount the component after 5 seconds
+    setInterval(() => {
+      setAlert(null);
+    }, 5000);
   });
 
   return (
@@ -25,7 +34,7 @@ function App() {
         <h1>(React) Google Books Search</h1>
         <h3>Search for and Save Books of Interest</h3>
       </Jumbotron>
-
+      {alert ? (<Alert {...alert} />) : null}
       {/* Setting up routing with two pages Saved and Search */}
       <Switch>
         <Route exact path={["/", "/search"]}>

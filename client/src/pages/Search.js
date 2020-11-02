@@ -33,8 +33,8 @@ function Search() {
     await API.saveBook(book);
     // Change the book state so it rerenders and selected book is removed
     setBooks(books.filter((element) => element !== book));
-    // Emite a message to all other connected clients what book was saved
-    socket.emit("saved", book.title);
+    // Emit a message to all other connected clients what book was saved
+    socket.emit("saved", book);
   }
 
   // Check the status of books state
