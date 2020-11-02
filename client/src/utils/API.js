@@ -34,7 +34,7 @@ export default {
           thumbnail: element.volumeInfo.imageLinks.thumbnail,
           description: element.volumeInfo.description,
         }));
-      console.log(books);
+      // console.log(books);
       return books;
     } catch (error) {
       console.log(error);

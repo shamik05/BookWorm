@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import io from "socket.io-client";
 import API from "../utils/API";
 import Result from "../components/Result";
+
+const socket = io();
 
 function Search() {
   const [books, setBooks] = useState();
@@ -22,6 +25,7 @@ function Search() {
   async function handleSave(book) {
     await API.saveBook(book);
     setBooks(books.filter((element) => element !== book));
+    socket.emit("saved", book.title);
   }
 
   function checkBooks() {

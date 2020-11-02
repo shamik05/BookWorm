@@ -36,6 +36,16 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
   console.log("Database Connected");
 });
 
-app.listen(PORT, () => {
+const server = require("http").createServer(app);
+const io = require("socket.io")(server);
+
+io.on("connection", (socket) => {
+  socket.on("saved", (msg) => {
+    console.log(msg);
+    io.emit("saved", msg);
+  });
+});
+
+server.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
