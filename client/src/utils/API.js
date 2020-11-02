@@ -1,8 +1,8 @@
 import axios from "axios";
 
+// Define google book api constants
 const APIKEY = process.env.REACT_APP_KEY;
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
-// const startIndex = "&startIndex=";
 const maxResults = "&maxResults=20";
 
 export default {
@@ -16,13 +16,19 @@ export default {
       return false;
     }
   },
+  // Search google api with search value
   async searchBooks(search) {
     try {
       const response = await axios.get(`${BASEURL}${search}&key=${APIKEY}${maxResults}`);
+      // If no results are found then return false
       if (response.data.totalItems === 0) {
         return false;
       }
+
+      // Get current list of saved books
       const savedBooks = await this.getBooks();
+
+      // Filter search results for any books saved and map select data into a new object
       const books = response.data.items
         .filter((item) => !savedBooks
           .some((e) => e.link === item.id))
@@ -41,6 +47,7 @@ export default {
       return false;
     }
   },
+  // Saves a book to the database
   async saveBook(book) {
     try {
       const response = await axios.post("/api/books", (book));
@@ -50,6 +57,7 @@ export default {
       return false;
     }
   },
+  // Deletes the book with the given id
   async deleteBook(id) {
     try {
       const response = await axios.delete(`/api/books/${id}`);
@@ -60,5 +68,3 @@ export default {
     }
   },
 };
-
-// GET https://books.googleapis.com/books/v1/volumes?key=[YOUR_API_KEY] HTTP/1.1

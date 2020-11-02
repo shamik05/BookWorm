@@ -10,6 +10,7 @@ import Jumbotron from "./components/Jumbotron";
 const socket = io();
 
 function App() {
+  // Handle an emitted message called saved and emit book details
   useEffect(() => {
     socket.on("saved", (data) => {
       alert(`${data} has been saved!`);
@@ -18,12 +19,14 @@ function App() {
 
   return (
     <BrowserRouter>
+      {/* Nav and Jumbotron are always visible */}
       <Nav />
       <Jumbotron>
         <h1>(React) Google Books Search</h1>
         <h3>Search for and Save Books of Interest</h3>
       </Jumbotron>
 
+      {/* Setting up routing with two pages Saved and Search */}
       <Switch>
         <Route exact path={["/", "/search"]}>
           <Search />

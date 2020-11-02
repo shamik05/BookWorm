@@ -1,5 +1,6 @@
 import React from "react";
 
+// Jumbotron component displaying any props.children passed in
 function Jumbotron({ children }) {
   return (
     <div
@@ -13,4 +14,5 @@ function Jumbotron({ children }) {
   );
 }
 
+// Export component
 export default Jumbotron;

@@ -1,3 +1,4 @@
+// Import dependencies
 const express = require("express");
 const path = require("path");
 const compression = require("compression");
@@ -27,6 +28,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+// Setup mongo connection
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
   useNewUrlParser: true,
   useFindAndModify: false,
@@ -36,9 +38,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
   console.log("Database Connected");
 });
 
+// Setup socketio connection
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
+// Listen for an emitted saved message
 io.on("connection", (socket) => {
   socket.on("saved", (msg) => {
     console.log(msg);
@@ -46,6 +50,7 @@ io.on("connection", (socket) => {
   });
 });
 
+// Start server
 server.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });

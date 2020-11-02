@@ -4,8 +4,10 @@ import API from "../utils/API";
 import Result from "../components/Result";
 
 function Saved() {
+  // Setting our component's initial state
   const [books, setBooks] = useState([]);
 
+  // Load all books and store them with setBooks
   useEffect(async () => {
     setBooks(await API.getBooks());
   }, []);
@@ -15,12 +17,14 @@ function Saved() {
     setBooks(books.filter((element) => element !== book));
   }
 
+  // Renders our saved page. Similar idea as the search page
   return (
     <>
       <h3>
         <i className="fas fa-download" />
         Saved Books
       </h3>
+      {/* If there are books to display then create a result component for each item */}
       {books.length ? (books.map((element) => (
         <Result
           key={element.link}
@@ -36,4 +40,5 @@ function Saved() {
   );
 }
 
+// Export component
 export default Saved;
