@@ -3,7 +3,7 @@ import axios from "axios";
 const APIKEY = process.env.REACT_APP_KEY;
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
 // const startIndex = "&startIndex=";
-const maxResults = "&maxResults=10";
+const maxResults = "&maxResults=16";
 
 export default {
   // Get all books
@@ -22,14 +22,20 @@ export default {
       if (response.data.totalItems === 0) {
         return false;
       }
-      const books = response.data.items.map((element) => ({
-        link: element.id,
-        title: element.volumeInfo.title,
-        subtitle: element.volumeInfo.subtitle,
-        author: element.volumeInfo.authors,
-        thumbnail: element.volumeInfo.imageLinks.thumbnail,
-        description: element.volumeInfo.description,
-      }));
+      const savedBooks = await this.getBooks();
+      console.log(savedBooks);
+      const books = response.data.items
+        .filter((item) => !savedBooks
+          .some((e) => e.link === item.id))
+        .map((element) => ({
+          link: element.id,
+          title: element.volumeInfo.title,
+          subtitle: element.volumeInfo.subtitle,
+          author: element.volumeInfo.authors,
+          thumbnail: element.volumeInfo.imageLinks.thumbnail,
+          description: element.volumeInfo.description,
+        }));
+      console.log(books);
       return books;
     } catch (error) {
       console.log(error);
