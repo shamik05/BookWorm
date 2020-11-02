@@ -3,7 +3,7 @@ import axios from "axios";
 const APIKEY = process.env.REACT_APP_KEY;
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
 // const startIndex = "&startIndex=";
-const maxResults = "&maxResults=16";
+const maxResults = "&maxResults=20";
 
 export default {
   // Get all books
@@ -23,7 +23,6 @@ export default {
         return false;
       }
       const savedBooks = await this.getBooks();
-      console.log(savedBooks);
       const books = response.data.items
         .filter((item) => !savedBooks
           .some((e) => e.link === item.id))
@@ -43,11 +42,8 @@ export default {
     }
   },
   async saveBook(book) {
-    event.preventDefault();
-    console.log(book);
     try {
       const response = await axios.post("/api/books", (book));
-      console.log(response);
       return response;
     } catch (error) {
       console.log(error);

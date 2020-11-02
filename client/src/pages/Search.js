@@ -19,6 +19,10 @@ function Search() {
     }
     setBooks(await API.searchBooks(searchValue));
   }
+  async function handleSave(book) {
+    await API.saveBook(book);
+    setBooks(books.filter((element) => element !== book));
+  }
 
   function checkBooks() {
     if (books === undefined) {
@@ -27,7 +31,9 @@ function Search() {
     if (books === false) {
       return <h4>No Results Found</h4>;
     }
-    return books.map((element) => <Result key={element.link} {...element} />);
+    return books.map((element) => (
+      <Result key={element.link} book={element} buttonClick={handleSave} type="SAVE" />
+    ));
   }
 
   return (
