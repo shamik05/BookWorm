@@ -20,19 +20,21 @@ const bookSchema = new Schema(
     author: {
       type: [String],
       trim: true,
-      required: true,
+      required: false,
       require: "Enter book's author(s)",
+      default: ["No author"],
     },
     description: {
       type: String,
       trim: true,
-      required: true,
+      required: false,
       require: "Enter a book description",
+      default: "No description",
     },
     thumbnail: {
       type: String,
       trim: true,
-      required: true,
+      required: false,
       require: "Enter the book's thumbnail url",
     },
     link: {

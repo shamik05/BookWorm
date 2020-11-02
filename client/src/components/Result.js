@@ -10,7 +10,7 @@ function Result({ book, buttonClick, type }) {
   return (
     // Display book title
     <div id="results" className="card-body border">
-      <h4 className="card-title">{title}</h4>
+      {title ? <h4 className="card-title">{title}</h4> : null}
 
       {/* Display save or delete button depending on type and click handler passed */}
       <button type="button" className="btn btn-primary float-right" onClick={() => buttonClick(book)}>{type}</button>
@@ -22,18 +22,20 @@ function Result({ book, buttonClick, type }) {
       {subtitle ? <h5 className="card-subtitle mb-2 text-muted">{subtitle}</h5> : null}
 
       {/* Display all authors from the array */}
-      <h5 className="card-subtitle mb-2 text-muted">
-        Written By:
-        {" "}
-        {author.join(", ")}
-      </h5>
+      {author ? (
+        <h5 className="card-subtitle mb-2 text-muted">
+          Written By:
+          {" "}
+          {author.join(", ")}
+        </h5>
+      ) : null }
 
       {/* Display book image and description */}
       <div className="resultsBlock">
         <div className="resultsImgBlock">
-          <img className="resultsImg" src={thumbnail} alt="book cover" />
+          {thumbnail ? <img className="resultsImg" src={thumbnail} alt="book cover" /> : null}
         </div>
-        <h5 className="card-text resultsDesc">{description}</h5>
+        {description ? <h5 className="card-text resultsDesc">{description}</h5> : null}
       </div>
     </div>
   );
