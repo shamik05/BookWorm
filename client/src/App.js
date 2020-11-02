@@ -19,12 +19,12 @@ function App() {
     socket.on("saved", (data) => {
       setAlert(data);
     });
-
-    // Set alert to null to dismount the component after 5 seconds
-    setInterval(() => {
-      setAlert(null);
-    }, 5000);
   });
+
+  // Set alert to null to dismount the component on click
+  function closeAlert() {
+    setAlert(null);
+  }
 
   return (
     <BrowserRouter>
@@ -34,7 +34,8 @@ function App() {
         <h1>(React) Google Books Search</h1>
         <h3>Search for and Save Books of Interest</h3>
       </Jumbotron>
-      {alert ? (<Alert {...alert} />) : null}
+      {/* Display alerts if there is an alert state */}
+      {alert ? (<Alert alert={alert} buttonClick={closeAlert} />) : null}
       {/* Setting up routing with two pages Saved and Search */}
       <Switch>
         <Route exact path={["/", "/search"]}>
