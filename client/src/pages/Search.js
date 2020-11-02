@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState } from "react";
 import API from "../utils/API";
 import Result from "../components/Result";
@@ -15,7 +14,7 @@ function Search() {
   async function handleSubmit(event) {
     event.preventDefault();
     if (!searchValue) {
-      console.log("search is null");
+      console.log("Search value is empty");
       return;
     }
     setBooks(await API.searchBooks(searchValue));

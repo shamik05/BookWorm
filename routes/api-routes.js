@@ -4,8 +4,9 @@ const Book = require("../models/book.js");
 
 // Define api routes
 router.get("/api/books", async (req, res) => {
+  console.log("test");
   Book.find({})
-    .then(res.json(true));
+    .then((books) => res.json(books));
 });
 
 router.post("/api/books", async (req, res) => {

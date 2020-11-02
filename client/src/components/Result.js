@@ -1,4 +1,3 @@
-// /* eslint-disable */
 import React from "react";
 import API from "../utils/API";
 
@@ -8,7 +7,7 @@ function Result({
   return (
     <div>
       <h4>{title}</h4>
-      <button type="button">VIEW</button>
+      <a href={`https://play.google.com/store/books/details?id=${link}`} rel="noreferrer" target="_blank">VIEW</a>
       <button
         type="button"
         onClick={() => API.saveBook({

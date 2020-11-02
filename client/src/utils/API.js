@@ -1,4 +1,3 @@
-/* eslint-disable prefer-template */
 import axios from "axios";
 
 const APIKEY = process.env.REACT_APP_KEY;
@@ -11,7 +10,8 @@ export default {
   async getBooks() {
     try {
       const response = await axios.get("/api/books");
-      return response;
+      console.log(response.data);
+      return response.data;
     } catch (error) {
       console.log(error);
       return false;
@@ -19,7 +19,7 @@ export default {
   },
   async searchBooks(search) {
     try {
-      const response = await axios.get(BASEURL + search + "&key=" + APIKEY + maxResults);
+      const response = await axios.get(`${BASEURL}${search}&key=${APIKEY}${maxResults}`);
       const books = response.data.items.map((element) => ({
         link: element.id,
         title: element.volumeInfo.title,
