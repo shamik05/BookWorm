@@ -20,6 +20,16 @@ function Search() {
     setBooks(await API.searchBooks(searchValue));
   }
 
+  function checkBooks() {
+    if (books === undefined) {
+      return <h4>Search For A Book To Begin!</h4>;
+    }
+    if (books === false) {
+      return <h4>No Results Found</h4>;
+    }
+    return books.map((element) => <Result key={element.link} {...element} />);
+  }
+
   return (
     <>
       <form>
@@ -28,10 +38,7 @@ function Search() {
       </form>
 
       <h3>Results</h3>
-      {books ? (books.map((element) => <Result key={element.link} {...element} />)
-      ) : (
-        <h4>No Results to Display</h4>
-      )}
+      {checkBooks()}
     </>
   );
 }

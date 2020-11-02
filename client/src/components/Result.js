@@ -19,7 +19,8 @@ function Result({
       {subtitle ? <h5>{subtitle}</h5> : null}
       <h5>
         Written By:
-        {Object.values(author)}
+        {" "}
+        {author.join(", ")}
       </h5>
       <img src={thumbnail} alt="book cover" />
       <h5>{description}</h5>

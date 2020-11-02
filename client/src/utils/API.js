@@ -20,6 +20,9 @@ export default {
   async searchBooks(search) {
     try {
       const response = await axios.get(`${BASEURL}${search}&key=${APIKEY}${maxResults}`);
+      if (response.data.totalItems === 0) {
+        return false;
+      }
       const books = response.data.items.map((element) => ({
         link: element.id,
         title: element.volumeInfo.title,

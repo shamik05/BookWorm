@@ -39,6 +39,7 @@ const bookSchema = new Schema(
       type: String,
       trim: true,
       required: true,
+      unique: true,
       require: "Enter the book's url",
     },
   },
