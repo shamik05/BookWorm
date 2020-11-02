@@ -5,6 +5,10 @@ This is a **M**ongoDB **E**xpress **R**eact **N**ode.js app to search for books 
 ## Table of Contents
 * [Installation](#Installation)
 * [Usage](#Usage)
+  * [Search](#Search)
+  * [Save](#Save)
+  * [View](#View)
+  * [Alert](#Alert)
 * [License](#License)
 * [Contributing](#Contributing)
 * [Questions](#Questions)
@@ -19,13 +23,26 @@ Type the following in any CLI to run the app.
 npm start
 ```
 Each module's functions have also been demo-ed below.
+
+### Search
+
 ![Search](assets/search.gif)
 
+
+### Save
 
 ![Saved](assets/saved.gif)
 
 
-![Bonus](assets/bonus.gif)
+### View
+
+![View](assets/view.gif)
+
+
+### Alert
+
+![Alert](assets/alert.gif)
+
 ## License 
 The project is currently licenseless.
 ## Contributing
