@@ -8,7 +8,7 @@
   "repository": {
     "type" : "git",
     "url" : "https://github.com/shamik05/BookWorm"
-  }
+  },
   "bugs": {
     "url": "https://github.com/shamik05/BookWorm/issues"
   },
@@ -24,7 +24,7 @@
     "lint": "eslint --quiet .",
     "fix": "eslint --fix ."
   },
-  "keywords": ["mern", "heroku", "google-books-api", "websocket-functionality", "expressjs". "reactjs", "nodejs", "mongoose", "socket-io", "bookworm", "bootstrap"],
+  "keywords": ["mern", "heroku", "google-books-api", "websocket-functionality", "expressjs", "reactjs", "nodejs", "mongoose", "socket-io", "bookworm", "bootstrap"],
   "author": "Shamik Haldar",
   "license": "ISC",
   "devDependencies": {
