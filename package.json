@@ -16,7 +16,8 @@
     "lint": "eslint --quiet .",
     "fix": "eslint --fix ."
   },
-  "author": "",
+  "keywords": ["mern", "heroku", "google-books-api", "websocket-functionality", "expressjs". "reactjs", "nodejs", "mongoose", "socket-io", "bookworm", "bootstrap"],
+  "author": "Shamik Haldar",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.3.0",
